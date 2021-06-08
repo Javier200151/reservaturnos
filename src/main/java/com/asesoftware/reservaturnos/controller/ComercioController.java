@@ -11,7 +11,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.asesoftware.reservaturnos.dto.ComercioDTO;
 import com.asesoftware.reservaturnos.entity.Comercio;
+import com.asesoftware.reservaturnos.mapper.IComercioMapper;
 import com.asesoftware.reservaturnos.service.IComercioService;
 
 @RestController
@@ -22,7 +24,7 @@ public class ComercioController {
 	private IComercioService comercioService;
 	
 	@GetMapping(path = "/all")
-	public List<Comercio> getAll(){
+	public List<ComercioDTO> getAll(){
 		return comercioService.getAll();
 	}
 	

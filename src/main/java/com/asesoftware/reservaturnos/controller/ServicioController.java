@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.asesoftware.reservaturnos.dto.ServicioDTO;
 import com.asesoftware.reservaturnos.entity.Servicio;
 import com.asesoftware.reservaturnos.service.IServicioService;
 
@@ -22,7 +23,7 @@ public class ServicioController {
 	private IServicioService servicioService;
 	
 	@GetMapping(path = "/all")
-	public List<Servicio> getAll(){
+	public List<ServicioDTO> getAll(){
 		return servicioService.getAll();
 	}
 	

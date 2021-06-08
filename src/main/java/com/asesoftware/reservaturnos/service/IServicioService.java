@@ -4,12 +4,13 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.asesoftware.reservaturnos.dto.ServicioDTO;
 import com.asesoftware.reservaturnos.entity.Servicio;
 
 @Service
 public interface IServicioService {
 
-	public List<Servicio> getAll();
+	public List<ServicioDTO> getAll();
 	
 	public Servicio getServicioById(Integer id);
 	

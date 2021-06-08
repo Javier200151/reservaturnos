@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.asesoftware.reservaturnos.dto.TurnoDTO;
 import com.asesoftware.reservaturnos.entity.Turno;
 import com.asesoftware.reservaturnos.service.ITurnoService;
 
@@ -22,7 +23,7 @@ public class TurnoController {
 	private ITurnoService turnoService;
 	
 	@GetMapping(path = "/all")
-	public List<Turno> getAll(){
+	public List<TurnoDTO> getAll(){
 		return turnoService.getAll();
 	}
 	

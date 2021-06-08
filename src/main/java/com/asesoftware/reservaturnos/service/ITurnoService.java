@@ -4,12 +4,13 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.asesoftware.reservaturnos.dto.TurnoDTO;
 import com.asesoftware.reservaturnos.entity.Turno;
 
 @Service
 public interface ITurnoService {
 
-	public List<Turno> getAll();
+	public List<TurnoDTO> getAll();
 	
 	public Turno getTurnoById(Integer id);
 	

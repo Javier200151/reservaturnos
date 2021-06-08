@@ -6,7 +6,9 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.asesoftware.reservaturnos.dto.ComercioDTO;
 import com.asesoftware.reservaturnos.entity.Comercio;
+import com.asesoftware.reservaturnos.mapper.IComercioMapper;
 import com.asesoftware.reservaturnos.repository.IComercioRepository;
 
 @Service
@@ -15,10 +17,13 @@ public class ComercioService implements IComercioService{
 	@Autowired
 	private IComercioRepository comercioRepository;
 	
+	@Autowired
+	private IComercioMapper mapper;
+	
 	@Override
-	public List<Comercio> getAll() {
+	public List<ComercioDTO> getAll() {
 		// TODO Auto-generated method stub
-		return comercioRepository.findAll();
+		return mapper.listaEntityToDto(comercioRepository.findAll());
 	}
 
 	@Override

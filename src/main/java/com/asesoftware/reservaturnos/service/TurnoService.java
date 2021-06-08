@@ -6,8 +6,10 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.asesoftware.reservaturnos.entity.Comercio;
+import com.asesoftware.reservaturnos.dto.TurnoDTO;
 import com.asesoftware.reservaturnos.entity.Turno;
+import com.asesoftware.reservaturnos.mapper.IServicioMapper;
+import com.asesoftware.reservaturnos.mapper.ITurnoMapper;
 import com.asesoftware.reservaturnos.repository.ITurnoRepository;
 
 @Service
@@ -16,10 +18,13 @@ public class TurnoService implements ITurnoService{
 	@Autowired
 	private ITurnoRepository turnoRepository;
 	
+	@Autowired
+	private ITurnoMapper mapper;
+	
 	@Override
-	public List<Turno> getAll() {
+	public List<TurnoDTO> getAll() {
 		// TODO Auto-generated method stub
-		return turnoRepository.findAll();
+		return mapper.listaEntityToDto(turnoRepository.findAll());
 	}
 
 	@Override
