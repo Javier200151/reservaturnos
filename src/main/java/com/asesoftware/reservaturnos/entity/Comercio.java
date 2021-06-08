@@ -5,8 +5,12 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import lombok.Data;
+
 import javax.persistence.*;
 
+@Data
 @Entity
 @Table(name = "comercios")
 public class Comercio {
@@ -22,27 +26,4 @@ public class Comercio {
 	@Column(name="aforo_maximo")
 	private String aforoMaximo;
 
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
-
-	public String getNombre() {
-		return nombre;
-	}
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-
-	public String getAforoMaximo() {
-		return aforoMaximo;
-	}
-
-	public void setAforoMaximo(String aforoMaximo) {
-		this.aforoMaximo = aforoMaximo;
-	}
 }

@@ -11,26 +11,26 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "servicios")
-public class Servicio {
-	
+@Table(name = "turnos")
+public class Turno {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="id_servicio")
+	@Column(name="id_turno")
 	private Integer id;
 	
-	@Column(name="id_comercio")
-	private Integer idComercio;
+	@Column(name="id_servicio")
+	private String idServicio;
 	
-	@Column(name="nom_servicio")
-	private String nombre;
+	@Column(name="fecha_turno")
+	private String fechaTurno;
 	
-	@Column(name="hora_apertura")
-	private String horaApertura;
+	@Column(name="hora_inicio")
+	private String horaInicio;
 	
-	@Column(name="hora_cierre")
-	private String horaCierre;
+	@Column(name="hora_fin")
+	private String horaFin;
 	
-	@Column(name="duracion")
-	private String duracion;
+	@Column(name="estado")
+	private String estado;
 }
