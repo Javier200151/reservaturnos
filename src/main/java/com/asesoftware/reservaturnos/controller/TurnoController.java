@@ -56,4 +56,9 @@ public class TurnoController {
 		
 		turnoService.deleteTurno(id);
 	}
+	
+	@GetMapping(path = "/servicio/{idservicio}")
+	public List<Turno> consultarTurnosPorServicio(@PathVariable Integer idservicio) {
+		return turnoService.consultarTurnosPorServicio(idservicio);
+	}
 }

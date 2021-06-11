@@ -19,4 +19,6 @@ public interface ITurnoService {
 	public Turno updateTurno(Turno turno);
 	
 	public void deleteTurno(Integer id);
+	
+	public List<Turno> consultarTurnosPorServicio(Integer idservicio);
 }

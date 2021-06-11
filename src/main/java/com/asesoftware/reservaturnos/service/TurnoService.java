@@ -3,6 +3,8 @@ package com.asesoftware.reservaturnos.service;
 import java.util.List;
 import java.util.Optional;
 
+import javax.persistence.Query;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -59,6 +61,11 @@ public class TurnoService implements ITurnoService{
 	public void deleteTurno(Integer id) {
 
 		turnoRepository.deleteById(id);
+	}
+
+	@Override
+	public List<Turno> consultarTurnosPorServicio(Integer idservicio) {
+		return turnoRepository.findByIdServicio(idservicio);
 	}
 
 }
